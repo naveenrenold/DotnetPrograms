@@ -1,0 +1,4 @@
+1.Connect to sql server
+2.Test get and post apis
+3. Remove hard coded connection string
+4.Better connection method?

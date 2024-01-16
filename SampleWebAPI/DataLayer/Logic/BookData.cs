@@ -12,7 +12,7 @@ namespace Book.Data.Logic{
             this.sqlConnection=iDalBase.Connect();
         }
         public IEnumerable<Book>GetBook()
-        {            
+        {
             var book=sqlConnection.Query<Book>("Select * from Book");
             return book;
         }

@@ -13,6 +13,7 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddTransient<IBookBusiness,BookBusiness>();
 builder.Services.AddTransient<IBookData,BookData>();
+builder.Services.AddTransient<IDALBase,DALBase>();
 
 var app = builder.Build();
 // Configure the HTTP request pipeline.

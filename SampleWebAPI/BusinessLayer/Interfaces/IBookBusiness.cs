@@ -1,6 +1,6 @@
-namespace Book.Business.Interface
+namespace Sample.Business.Interface
 {
-    using Book.Model;
+    using Sample.Model;
     public interface IBookBusiness
     {
         public IEnumerable<Book> GetBook();

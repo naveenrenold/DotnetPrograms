@@ -1,8 +1,8 @@
-namespace Book.Data.Logic
+namespace Sample.Data.Logic
 {
     using System.Data.SqlClient;
     using System.Configuration;
-    using Book.Data.Interface;
+    using Sample.Data.Interface;    
 
     public class DALBase:IDALBase
 {

@@ -1,6 +1,6 @@
 using System.Data.SqlClient;
 
-namespace Book.Data.Interface
+namespace Sample.Data.Interface
 {
     public interface IDALBase
     {

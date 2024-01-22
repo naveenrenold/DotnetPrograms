@@ -1,4 +1,8 @@
-1.Connect to sql server
-2.Test get and post apis
-3. Remove hard coded connection string
-4.Better connection method?
+4.Better connection method?-later
+5.New post api that accepts large image data: multipart prob-done
+6.Create blob storage-done
+7.upload to function app
+8. make api accept image
+9.Create function app
+10.refactor
+11.make helper to generate interfaces from controller

@@ -1,7 +1,7 @@
-namespace Book.Data.Logic{
+namespace Sample.Data.Logic{
     using System.Collections;
-    using Book.Model;
-    using Book.Data.Interface;
+    using Sample.Model;
+    using Sample.Data.Interface;
     using System.Data.SqlClient;
     using Dapper;
 
@@ -12,13 +12,14 @@ namespace Book.Data.Logic{
             this.sqlConnection=iDalBase.Connect();
         }
         public IEnumerable<Book>GetBook()
+        
         {
-            var book=sqlConnection.Query<Book>("Select * from Book");
+            var book=sqlConnection.Query<Book>(Query.Book.GetBook);
             return book;
         }
         public bool AddBook(List<Book> book)
         {            
-            var result=sqlConnection.Execute("Insert into Book values(@name,@title,@author)",book )>0;
+            var result=sqlConnection.Execute(Query.Book.AddBook,book )>0;
             return result;
         }
     }

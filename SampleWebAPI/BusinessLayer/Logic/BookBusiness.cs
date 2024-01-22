@@ -1,8 +1,8 @@
-namespace Book.Business.Logic{
+namespace Sample.Business.Logic{
     using System.Collections;
-    using Book.Model;
-    using Book.Business.Interface;
-    using Book.Data.Interface;
+    using Sample.Model;
+    using Sample.Business.Interface;
+    using Sample.Data.Interface;
     public class BookBusiness:IBookBusiness{
         public readonly IBookData iBookData;
         public BookBusiness(IBookData iBookData)

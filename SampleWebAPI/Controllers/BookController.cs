@@ -1,9 +1,8 @@
-namespace Book.Controllers
+namespace Sample.Controllers.Book
 {
     using Microsoft.AspNetCore.Mvc;
-    using Book.Model;
-    using Book.Business.Interface;
-
+    using Sample.Model;
+    using Sample.Business.Interface;
     [Route("api/[controller]")]
     [ApiController]
     public class BookController : ControllerBase

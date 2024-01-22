@@ -1,6 +1,6 @@
-namespace Book.Data.Interface
+namespace Sample.Data.Interface
 {
-    using Book.Model;
+    using Sample.Model;
     public interface IBookData
     {
         public  IEnumerable<Book> GetBook();

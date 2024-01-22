@@ -1,4 +1,4 @@
-namespace Book.Model
+namespace Sample.Model
 {
      public class Book
     {

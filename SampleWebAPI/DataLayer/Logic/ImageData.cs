@@ -2,10 +2,8 @@ namespace Sample.Data.Logic{
     using System.Collections;
     using Sample.Model;
     using Sample.Data.Interface;
-    using System.Data.SqlClient;
-    using Dapper;
-    using Sample.Data;
-    using Azure.Storage.Blobs;
+    using System.Data.SqlClient;    
+    using Azure.Storage.Blobs;    
 
     public class ImageData:IImageData{
         public readonly SqlConnection sqlConnection;
@@ -15,9 +13,18 @@ namespace Sample.Data.Logic{
             this.sqlConnection=iDalBase.Connect();
             this.blobServiceClient=blobServiceClient;
         }
-        public bool SaveImage(Image Image)
+        public bool SaveImage(Image image)
         {            
-            blobServiceClient.
+            var blobClient=blobServiceClient.GetBlobContainerClient("testblob");            
+            try{
+            var success=blobClient.UploadBlob(image.ImageName,image.ImageBytes.OpenReadStream());
+            }
+            catch(Exception ex)
+            {
+                Console.WriteLine($"{image.ImageName} upload failed. Error at {ex.StackTrace} with exception {ex.Message}");
+                return false;
+            }
+            return true;
         }
     }
 }

@@ -14,7 +14,7 @@ namespace Sample.Controllers.Image
             this.iImageBusiness=iImageBusiness;
         }    
     [HttpPost]
-    public IActionResult Post([FromBody] Image value)
+    public IActionResult Post([FromForm] Image value)
     {
         return Ok(iImageBusiness.SaveImage(value));
     }

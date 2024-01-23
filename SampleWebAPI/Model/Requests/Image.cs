@@ -2,7 +2,7 @@ namespace Sample.Model
 {
      public class Image
     {
-        public string AltText { get; set; }
-        public MultipartContent ImageData { get; set; }
+        public string ImageName { get; set; }
+        public IFormFile ImageBytes { get; set; }
     }
 }

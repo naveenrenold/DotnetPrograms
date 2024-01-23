@@ -4,19 +4,20 @@ using Sample.Data.Logic;
 using Sample.Data.Interface;
 using Azure.Identity;
 using Microsoft.Extensions.Azure;
+using Azure.Storage.Blobs;
 
 var builder = WebApplication.CreateBuilder(args);
-
 // Add services to the container.
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
-builder.Services.AddAzureClients(x=>{
-x.AddBlobServiceClient(new Uri("https://imageblobstorage1.blob.core.windows.net/testblob"));
-x.UseCredential(new DefaultAzureCredential());
-});
+// builder.Services.AddAzureClients(x=>{
+// x.AddBlobServiceClient(new Uri("https://imageblobstorage1.blob.core.windows.net/testblob"));
+// x.UseCredential(new DefaultAzureCredential());
+// });
+builder.Services.AddAzureClients(x=>{x.AddBlobServiceClient(builder.Configuration.GetConnectionString("BLOB_STORAGE_CONNECTIONSTRING"));});
 //registers interfaces start
 builder.Services.AddTransient<IBookBusiness,BookBusiness>();
 builder.Services.AddTransient<IBookData,BookData>();

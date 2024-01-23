@@ -1,8 +1,12 @@
-4.Better connection method?-later
-5.New post api that accepts large image data: multipart prob-done
-6.Create blob storage-done
-7.upload to function app
-8. make api accept image
-9.Create function app
-10.refactor
-11.make helper to generate interfaces from controller
+Now image is accepted by api and uploaded to blob
+
+1.Create function app
+2.upload to function app
+3.refactor?
+4.make helper to generate interfaces from controller
+
+
+how send image throguh postman?-done
+formdata for now
+azure credentials-just use connection string lol
+covert it into a binary steram and upload the blob-todo-done

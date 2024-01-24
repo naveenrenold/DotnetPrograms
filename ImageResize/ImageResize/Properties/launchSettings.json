@@ -1,8 +1,8 @@
 {
   "profiles": {
-    "ImageResizeFunction": {
+    "ImageResize": {
       "commandName": "Project",
-      "commandLineArgs": "--port 7013",
+      "commandLineArgs": "--port 7168",
       "launchBrowser": false
     }
   }

@@ -13,8 +13,12 @@ namespace ImageResize
     public class ImageResize
     {
         [FunctionName("ImageResize")]
-        public void Run([BlobTrigger("testblob/{name}", Connection = "AzureWebJobsStorage")]Stream myBlob, string name, ILogger log)
+        public void Run([BlobTrigger("%container%/{name}", Connection = "AzureWebJobsStorage")]Stream myBlob, string name, ILogger log)
         {
+            if(name.StartsWith("resized"))
+            {
+                return;
+            }
             log.LogInformation($"C# Blob trigger function Processing started\n Name:{name} \n Size: {myBlob.Length} Bytes");
             MagickNET.Initialize();
             var image = new MagickImage(myBlob);

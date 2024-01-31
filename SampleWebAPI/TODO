@@ -1,12 +1,5 @@
-Now image is accepted by api and uploaded to blob
+Authentication and Authentication
 
-1.Create function app
-2.upload to function app
-3.refactor?
-4.make helper to generate interfaces from controller
+run some tests testing-Xunit
 
-
-how send image throguh postman?-done
-formdata for now
-azure credentials-just use connection string lol
-covert it into a binary steram and upload the blob-todo-done
+React-write basic proggram and start with some basic things
